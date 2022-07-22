@@ -1,0 +1,53 @@
+﻿@model List<Modelo>
+
+@{
+    ViewBag.Title = "Relación de Modelos";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <h2> @ViewBag.Title </h2>
+    </div>
+    <div class="col-md-3 mt-1">
+        <a style="float: right;" class="btn btn-success" href="Modelo/Create"> Agregar Modelo </a>
+    </div>
+</div>
+<hr />
+
+<table class="table table-sm table-striped table-hover table-light">
+    <thead>
+        <tr>
+            <th> Id Modelo</th>
+            <th> Descripcion </th>
+            <th> Propulsion </th>
+            <th> Motores </th>
+            <th> Peso </th>
+            <th> Avion </th>
+            <th class="text-end"> Acci&oacute;n </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.IdModelo </td>
+                <td> @{ @item.Descripcion.ToString().Substring(0, 30); }... </td>
+                <td> @item.Propulsion </td>
+                <td> @item.Motores </td>
+                <td> @item.Peso </td>
+                <td>
+                    @if(@item.Avion is not null) {
+                        @item.Avion.Siglas
+                    }
+                </td>
+               <td id="btn_link">
+                    <div style="float: right;" class="btn-group">
+                        <span class="btn btn-sm btn-success"> @Html.ActionLink("Editar", "Edit", new { id = item.IdModelo }) </span>
+                        <span class="btn btn-sm btn-info"> @Html.ActionLink("Detalles", "Details", new { id = item.IdModelo }) </span>
+                        <span class="btn btn-sm btn-danger"> @Html.ActionLink("Eliminar", "Delete", new { id = item.IdModelo }, new { onclick="return confirm('Seguro? Se eliminara el registro');"}) </span>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

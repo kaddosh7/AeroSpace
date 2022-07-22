@@ -1,0 +1,25 @@
+﻿@using AeroSpace.Models
+@model Propietario
+
+@{ ViewBag.Title = "Editar Propietario"; }
+
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Edit" asp-controller="Propietario" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <input type="hidden" asp-for="IdPropietario" />
+    <label asp-for="Rif" class="form-label col-md-2"></label>
+    <span asp-validation-for="Rif" class="text-danger"></span>
+    <input type="text" asp-for="Rif" class="form-control" /> <br />
+
+    <label asp-for="PersonaId" class="form-label col-md-2"> Nombre Completo </label>
+    <span asp-validation-for="PersonaId" class="text-danger"></span>
+    <select asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona"> <option>Seleccione una Persona</option> </select>
+    <br /><br />
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar Cambios </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Propietarios", "Index")</span>
+    </div>
+</form>

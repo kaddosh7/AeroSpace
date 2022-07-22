@@ -1,0 +1,32 @@
+﻿@using AeroSpace.Models
+@model Persona
+
+@{ ViewBag.Title = "Editar Registro de Personal"; }
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Edit" asp-controller="Persona" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <input type="hidden" asp-for="IdPersona" />
+    <label asp-for="CedulaPersona" class="form-label col-md-2">  </label>
+    <span asp-validation-for="CedulaPersona" class="text-danger"></span>
+    <input type="text" asp-for="CedulaPersona" class="form-control" /> <br />
+
+    <label asp-for="NombrePersona" class="form-label col-md-2">  </label>
+    <span asp-validation-for="NombrePersona" class="text-danger"></span>
+    <input type="text" asp-for="NombrePersona" class="form-control" /> <br /><br />
+
+    <label asp-for="CargoPersona" class="form-label col-md-2"></label>
+    <span asp-validation-for="CargoPersona" class="text-danger"></span>
+    <select asp-for="CargoPersona" class="form-control">
+        <option selected disabled> Seleccione el Cargo </option>
+        <option value="Empleado"> Empleado </option>
+        <option value="Inversionista"> Inversionista </option>
+        <option value="Piloto"> Piloto </option>
+    </select> <br /><br />
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar Cambios </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Personal", "Index") </span>
+    </div>
+</form>

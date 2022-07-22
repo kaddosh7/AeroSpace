@@ -1,0 +1,28 @@
+﻿@model AeroSpace.Models.Propietario
+
+@{
+    ViewBag.Title = "Agregar Propietario";
+}
+
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Create" asp-controller="Propietario" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+
+    <label asp-for="Rif" class="form-label col-md-2">  </label>
+    <span asp-validation-for="Rif" class="text-danger"></span>
+    <input type="text" asp-for="Rif" class="form-control" readonly placeholder="************" /> <br />
+
+    <label asp-for="PersonaId" class="form-label col-md-2"> Nombre Propietario </label>
+    <span asp-validation-for="PersonaId" class="text-danger"></span>
+    <select asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona">
+        <option disabled selected> Seleccione una Persona </option>
+    </select>
+    <br /><br />
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Personal", "Index") </span>
+    </div>
+</form>

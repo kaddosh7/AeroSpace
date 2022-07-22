@@ -1,0 +1,47 @@
+﻿@using AeroSpace.Models
+@model Propietario
+
+@{ ViewBag.Title = "Detalles de Personal"; }
+
+<h2> @ViewBag.Title </h2>
+<hr /> <br />
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.IdPropietario): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.IdPropietario) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Rif): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Rif) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.PersonaId): </div>
+    <div class="col-md-9">
+        <select style="border: none; background: none; padding: 0;" asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona" disabled>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.EstadoPropietario): </div>
+    <div class="col-md-9">
+        @if (Model.EstadoPropietario == 1)
+        {
+            <span class="text-success fw-bolder"> Personal Activo </span>
+        } else
+        {
+            <span class="text-danger fw-bolder"> Personal Inactivo </span>
+        }
+    </div>
+</div>
+<br /> <hr /> <br />
+<div id="form_creation">
+    <div id="form_creation" class="btn-group">
+        <span class="btn btn-warning"> @Html.ActionLink("Editar Registro", "Edit", new { id = Model.IdPropietario })</span>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Personal", "Index")</span>
+    </div>
+</div>
+
+    

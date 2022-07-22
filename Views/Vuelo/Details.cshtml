@@ -1,0 +1,50 @@
+﻿@using AeroSpace.Models
+@model Vuelo
+
+@{ ViewBag.Title = "Detalles de Vuelo"; }
+
+<h2> @ViewBag.Title </h2>
+<hr /> <br />
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.IdVuelo): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.IdVuelo) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Fecha): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Fecha) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.AvionId): </div>
+    <div class="col-md-9">
+        <select style="border: none; background: none; padding: 0;" asp-for="AvionId" class="form-control" asp-items="ViewBag.IdAvion" disabled>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.TipoVuelo): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.TipoVuelo) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.EstadoVuelo): </div>
+    <div class="col-md-9">
+        @if (Model.EstadoVuelo == 1)
+        {
+            <span class="text-success fw-bolder"> Vuelo Activo </span>
+        } else
+        {
+            <span class="text-danger fw-bolder"> Vuelo Inactivo </span>
+        }
+    </div>
+</div>
+<br /> <hr /> <br />
+<div id="form_creation">
+    <div id="form_creation" class="btn-group">
+        <span class="btn btn-warning"> @Html.ActionLink("Editar Registro", "Edit", new { id = Model.IdVuelo })</span>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Aviones", "Index")</span>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@using AeroSpace.Models
+@model Avion
+
+@{ ViewBag.Title = "Modificar Datos de Avion"; }
+
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Edit" asp-controller="Avion" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <input type="hidden" asp-for="IdAvion" />
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+            <label asp-for="Siglas" class="form-label col-md-2"></label>
+            <span asp-validation-for="Siglas" class="text-danger"></span>
+            <input type="text" asp-for="Siglas" class="form-control" /> <br />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Capacidad" class="form-label col-md-2"></label>
+            <span asp-validation-for="Capacidad" class="text-danger"></span>
+            <input type="text" min="1" asp-for="Capacidad" class="form-control" /> <br />
+        </div>
+    </div>
+
+    <div class="col-md-12 row">
+        <div class="col-md-4">
+            <label asp-for="TipoAvion" class="form-label col-md-2"></label>
+            <span asp-validation-for="TipoAvion" class="text-danger"></span>
+            <input type="text" min="1" asp-for="TipoAvion" class="form-control" /> <br />
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="PropietarioId" class="form-label col-md-2"></label>
+            <span asp-validation-for="PropietarioId" class="text-danger"></span>
+            <select asp-for="PropietarioId" class="form-control" accesskey="ViewBag.IdPropietario" asp-items="ViewBag.IdPropietario">
+                <option disabled selected> Seleccione una Persona </option>
+            </select>
+            <br /><br />
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="NumMotores" class="form-label col-md-2"></label>
+            <span asp-validation-for="NumMotores" class="text-danger"></span>
+            <input type="number" min="1" asp-for="NumMotores" class="form-control" /> <br />
+        </div>
+    </div>
+
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+        </div>
+
+        <div class="col-md-6">
+            <div id="" class="btn-group">
+                <button type="submit" class="btn btn-success"> Guardar Cambios </button>
+                <span class="btn btn-info"> @Html.ActionLink("Relacion de Aviones", "")</span>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</form>

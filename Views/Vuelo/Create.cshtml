@@ -1,0 +1,64 @@
+﻿@model AeroSpace.Models.Vuelo
+
+@{ ViewBag.Title = "Registro de Vuelos"; }
+
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Create" asp-controller="Vuelo" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <label asp-for="Fecha" class="form-label col-md-2"></label>
+            <span asp-validation-for="Fecha" class="text-danger"></span>
+            <input type="date" asp-for="Fecha" class="form-control" required onerror="Seleccione una fecha" /> <br />
+
+            <label asp-for="Hora" class="form-label col-md-2"></label>
+            <span asp-validation-for="Hora" class="text-danger"></span>
+            <input type="time" asp-for="Hora" class="form-control" /> <br />
+    
+            <label asp-for="TipoVuelo" class="form-label col-md-2"></label>
+            <span asp-validation-for="TipoVuelo" class="text-danger"></span>
+            <select asp-for="TipoVuelo" class="form-control">
+                <option selected disabled> Selecione una Opci&oacute;n </option>
+                <option value="Comercial"> Comercial </option>
+                <option value="Pasajeros"> Pasajeros </option>
+            </select> <br />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="AvionId" class="form-label col-md-2"></label>
+            <span asp-validation-for="AvionId" class="text-danger"></span>
+            <select asp-for="AvionId" class="form-control" asp-items="ViewBag.IdAvion">
+                <option disabled selected> Seleccione un Avion </option>
+            </select> <br />
+
+            <label asp-for="PilotoId" class="form-label col-md-2"></label>
+            <span asp-validation-for="PilotoId" class="text-danger"></span>
+            <select asp-for="PilotoId" class="form-control" asp-items="ViewBag.IdPiloto">
+                <option disabled selected> Seleccione Piloto </option>
+            </select> <br />
+
+            <label asp-for="Copiloto" class="form-label col-md-2"></label>
+            <span asp-validation-for="Copiloto" class="text-danger"></span>
+            <select asp-for="Copiloto" class="form-control" asp-items="ViewBag.IdPiloto">
+                <option disabled selected> Seleccione Copiloto </option>
+            </select> <br />
+
+            <label asp-for="TipoAvion" class="form-label col-md-2"></label>
+            <span asp-validation-for="TipoAvion" class="text-danger"></span>
+            <select asp-for="TipoAvion" class="form-control">
+                <option disabled selected> Seleccione Tipo Avion </option>
+                <option value="Pasajeros"> Pasajeros </option>
+                <option value="Comercial"> Comercial </option>
+            </select><br /><br />
+        </div>
+    </div>
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Vuelos", "")</span>
+    </div>
+</form>

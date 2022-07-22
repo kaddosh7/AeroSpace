@@ -1,0 +1,52 @@
+﻿@using AeroSpace.Models
+@model Hangar
+
+@{ ViewBag.Title = "Detalles del Hagar"; }
+
+<h2> @ViewBag.Title </h2>
+<hr /> <br />
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.IdHangar): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.IdHangar) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.PersonaId): </div>
+    <div class="col-md-9"> <select style="border: none; background: none; padding: 0;" asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona" disabled> </select> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Ubicacion): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Ubicacion) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.CapacidadHangar): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.CapacidadHangar) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.CostoHora): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.CostoHora) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.EstadoHangar): </div>
+    <div class="col-md-9">
+        @if (Model.EstadoHangar == 1)
+        {
+            <span class="text-success fw-bolder"> Hangar Habilitado </span>
+        } else
+        {
+            <span class="text-danger fw-bolder"> Hangar Habilitado </span>
+        }
+    </div>
+</div>
+<br /> <hr /> <br />
+<div id="form_creation">
+    <div id="form_creation" class="btn-group">
+        <span class="btn btn-warning"> @Html.ActionLink("Editar Registro", "Edit", new { id = Model.IdHangar })</span>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Hangares", "Index")</span>
+    </div>
+</div>

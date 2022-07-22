@@ -1,0 +1,26 @@
+﻿@model AeroSpace.Models.Piloto
+@{ ViewBag.Title = "Agregar Piloto"; }
+<h2> @ViewBag.Title </h2>
+<hr />
+<form id="form_creation" asp-action="Create" asp-controller="Piloto" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+
+    <label asp-for="LicenciaPiloto" class="form-label col-md-2">  </label>
+    <span asp-validation-for="LicenciaPiloto" class="text-danger"></span>
+    <input type="text" asp-for="LicenciaPiloto" class="form-control" readonly placeholder="**************" /> <br />
+
+    <label asp-for="HorasVuelo" class="form-label col-md-2">  </label>
+    <span asp-validation-for="HorasVuelo" class="text-danger"></span>
+    <input type="text" asp-for="HorasVuelo" class="form-control" /> <br /><br />
+
+    <label asp-for="PersonaId" class="form-label col-md-2"></label>
+    <span asp-validation-for="PersonaId" class="text-danger"></span>
+    <select asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPiloto">
+        <option selected disabled> Seleccione el Cargo </option>
+    </select> <br /><br />
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Pilotos", "Index") </span>
+    </div>
+</form>

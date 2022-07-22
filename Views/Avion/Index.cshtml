@@ -1,0 +1,48 @@
+﻿@model List<Avion>
+@{ ViewBag.Title = "Relacion de Aviones"; }
+
+    <div class="row">
+        <div class="col-md-9">
+            <h2> @ViewBag.Title </h2>
+        </div>
+        <div class="col-md-3 mt-1">
+            <a style="float: right;" class="btn btn-success" href="Avion/Create"> Agregar Avion </a>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-sm table-striped table-hover table-light">
+        <thead>
+            <tr>
+                <th> Id Avion </th>
+                <th> SIGLAS </th>
+                <th> Capacidad Avion </th>
+                <th> Tipo </th>
+                <th> Propietario </th>
+                <th> Num Motores</th>
+                <th class="text-end"> Acci&oacute;n </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+                   <td id="id_link"> @Html.ActionLink(item.IdAvion + "", "Details", new { id = item.IdAvion } ) </td>
+                   <td> @item.Siglas </td>
+                   <td> @item.TipoAvion </td>
+                   <td> @item.Capacidad </td>
+                   <td>
+                        @if (item.Propietario is not null)
+                            @item.Propietario.IdPropietario
+                   </td>
+                   <td> @item.NumMotores </td>
+                   <td id="btn_link">
+                        <div style="float: right;" class="btn-group">
+                            <span class="btn btn-sm btn-success"> @Html.ActionLink("Editar", "Edit", new { id = item.IdAvion }) </span>
+                            <span class="btn btn-sm btn-info"> @Html.ActionLink("Detalles", "Details", new { id = item.IdAvion }) </span>
+                            <span class="btn btn-sm btn-danger"> @Html.ActionLink("Eliminar", "Delete", new { id = item.IdAvion }, new { onclick="return confirm('Seguro? Se eliminara el registro');"}) </span>
+                        </div>
+                    </td>
+                </tr> 
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,74 @@
+﻿@model AeroSpace.Models.Estadium
+@{ ViewBag.Title = " Registro de Estadia "; }
+<h2> @ViewBag.Title </h2>
+<hr />
+<form id="form_creation" asp-action="Create" asp-controller="Estadium" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label asp-for="FechaEntrada" class="form-label col-md-4"></label>
+                <span asp-validation-for="FechaEntrada" class="text-danger"></span>
+                <input type="date" asp-for="FechaEntrada" class="form-control" id="fechaEntrada" required title="Seleccione una fecha de entrada" /> <br />
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="FechaSalida" class="form-label col-md-4"></label>
+                <span asp-validation-for="FechaSalida" class="text-danger"></span>
+                <input type="date" min="1" asp-for="FechaSalida" class="form-control" id="fechaSalida" required /> <br />
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="AvionId" class="form-label col-md-2"></label>
+                <span asp-validation-for="AvionId" class="text-danger"></span>
+                <select asp-for="AvionId" class="form-control" asp-items="ViewBag.IdAvion" required>
+                    <option disabled selected> Seleccione un Avion </option>
+                </select>
+                <br /><br />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label asp-for="HangarId" class="form-label col-md-2"></label>
+                <span asp-validation-for="HangarId" class="text-danger"></span>
+                <select asp-for="HangarId" class="form-control" asp-items="ViewBag.IdHangar" id="montoHangar" required>
+                    <option disabled selected> Seleccione un Hangar </option>
+                </select><br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="form-label col-md-2">*</label>
+                        <span class="text-danger"></span>
+                        <input type="number" id="totalHoras" placeholder="Total Horas" value="" class="form-control text-end" readonly required />
+                    </div>
+                    <div class="col-md-7">
+                        <label class="form-label col-md-2">*</label>
+                        <span class="text-danger"></span>
+                        <select asp-for="HangarId" class="form-control text-end" asp-items="ViewBag.CostoHangar" id="CostoHangar" required>
+                             <option selected disabled> Confirmar Costo </option>
+                        </select><br />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="MontoEtadia" class="form-label col-md-4"> </label>
+                <span asp-validation-for="MontoEtadia" class="text-danger"></span>
+                <input type="number" asp-for="MontoEtadia" value="" class="form-control text-end" asp-format="{0:0.##}" id="totalMontoHangar" readonly required/> <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+        </div>
+
+        <div class="col-md-6">
+            <div id="" class="btn-group">
+                <button type="submit" class="btn btn-success"> Registrar </button>
+                <span class="btn btn-info"> @Html.ActionLink("Relacion de Estadias", "")</span>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</form>

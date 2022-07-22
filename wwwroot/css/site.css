@@ -1,0 +1,50 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.btn, .btn-sm {
+    border-radius: 2px !important;
+}
+
+#btn_link span a {
+   
+    text-decoration: none;
+    font-weight: 500;
+    color: #FFF !important;
+}
+
+#id_link a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#form_creation a {
+    text-decoration: none;
+    color: #FFF !important;
+    font-weight: 600;
+    
+}
+
+#form_creation .btn-group {
+    float: right;
+}
+
+.text-danger {
+    font-size: 0.9em;
+    font-style: oblique;
+}

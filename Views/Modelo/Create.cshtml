@@ -1,0 +1,47 @@
+﻿@model AeroSpace.Models.Modelo
+@{ ViewBag.Title = "Agregar Modelo"; }
+<h2> @ViewBag.Title </h2>
+<hr />
+<form id="form_creation" asp-action="Create" asp-controller="Modelo" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+            <label asp-for="Descripcion" class="form-label col-md-2">  </label>
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+            <textarea type="text" asp-for="Descripcion" rows="3" class="form-control"> </textarea> <br />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Propulsion" class="form-label col-md-2">  </label>
+            <span asp-validation-for="Propulsion" class="text-danger"></span>
+            <input type="text" asp-for="Propulsion" class="form-control" /> <br /><br />
+        </div>
+    </div>
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+            <label asp-for="Motores" class="form-label col-md-2">  </label>
+            <span asp-validation-for="Motores" class="text-danger"></span>
+            <input type="text" asp-for="Motores" class="form-control" /> <br /><br />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Peso" class="form-label col-md-2">  </label>
+            <span asp-validation-for="Peso" class="text-danger"></span>
+            <input type="text" asp-for="Peso" class="form-control" /> <br /><br />
+        </div>
+    </div>
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+            <label asp-for="AvionId" class="form-label col-md-2"></label>
+            <span asp-validation-for="AvionId" class="text-danger"></span>
+            <select asp-for="AvionId" asp-items="ViewBag.IdAvion" class="form-control"><option> Seleccione un Avion </option></select>
+        </div>
+        <div class="col-md-6">
+            <div id="" class="col-md-12 mt-2">
+                <br />
+            </div>
+            <div id="" class="btn-group">
+                <button type="submit" class="btn btn-success"> Guardar </button>
+                <span class="btn btn-info"> @Html.ActionLink("Relacion de Modelos", "Index") </span>
+            </div>
+        </div>
+    </div>
+</form>

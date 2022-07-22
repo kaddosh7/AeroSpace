@@ -1,0 +1,33 @@
+﻿@using AeroSpace.Models
+@model Hangar
+
+@{ ViewBag.Title = "Editar Hangar"; }
+
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Edit" asp-controller="Hangar" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <input type="hidden" asp-for="IdHangar" />
+    <label asp-for="Ubicacion" class="form-label col-md-2"></label>
+    <span asp-validation-for="Ubicacion" class="text-danger"></span>
+    <input type="text" asp-for="Ubicacion" class="form-control" /> <br />
+    
+    <label asp-for="CapacidadHangar" class="form-label col-md-2"></label>
+    <span asp-validation-for="CapacidadHangar" class="text-danger"></span>
+    <input type="text" asp-for="CapacidadHangar" class="form-control" /> <br />
+
+    <label asp-for="PersonaId" class="form-label col-md-2"></label>
+    <span asp-validation-for="PersonaId" class="text-danger"></span>
+    <select asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona"></select>
+    <br /><br />
+    
+    <label asp-for="CostoHora" class="form-label col-md-2"></label>
+    <span asp-validation-for="CostoHora" class="text-danger"></span>
+    <input type="text" asp-for="CostoHora" class="form-control" /> <br />
+
+    <div id="" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relacion de Hangares", "")</span>
+    </div>
+</form>

@@ -1,0 +1,59 @@
+﻿@model AeroSpace.Models.Modelo
+
+@{ ViewBag.Title = "Detalles de Personal"; }
+
+<h2> @ViewBag.Title </h2>
+<hr /> <br />
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.IdModelo): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.IdModelo) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Descripcion): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Descripcion) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Propulsion): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Propulsion) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Motores): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Motores) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Peso): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Peso) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.AvionId): </div>
+    <div class="col-md-9">
+        <select style="border: none; background: none; padding: 0;" asp-for="AvionId" class="form-control" asp-items="ViewBag.Siglas" disabled></select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.EstadoModelo): </div>
+    <div class="col-md-9">
+        @if (Model.EstadoModelo == 1)
+        {
+            <span class="text-success fw-bolder"> Modelo Activo </span>
+        } else
+        {
+            <span class="text-danger fw-bolder"> Modelo Inactivo </span>
+        }
+    </div>
+</div>
+
+<br /> <hr /> <br />
+<div id="form_creation">
+    <div id="form_creation" class="btn-group">
+        <span class="btn btn-warning"> @Html.ActionLink("Editar Registro", "Edit", new { id = Model.IdModelo })</span>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Modelo", "Index")</span>
+    </div>
+</div>

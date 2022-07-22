@@ -1,0 +1,33 @@
+﻿@using AeroSpace.Models
+@model Empleado
+
+@{ ViewBag.Title = "Editar Registro de Empleado"; }
+<h2> @ViewBag.Title </h2>
+<hr />
+
+<form id="form_creation" asp-action="Edit" asp-controller="Empleado" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+    <input type="hidden" asp-for="IdEmpleado" />
+    <label asp-for="RolEmpleado" class="form-label col-md-2"></label>
+    <span asp-validation-for="RolEmpleado" class="text-danger"></span>
+    <select asp-for="RolEmpleado" class="form-control">
+        <option selected disabled> Seleccione un Rol </option>
+        <option value="Admin"> Administrador </option>
+        <option value="User"> Usuario </option>
+        <option value="Emp"> Empleado </option>
+    </select> <br />
+    
+    <label asp-for="Salario" class="form-label col-md-2"></label>
+    <span asp-validation-for="Salario" class="text-danger"></span>
+    <input type="number" asp-for="Salario" class="form-control" /> <br />
+
+    <label asp-for="PersonaId" class="form-label"></label>
+    <span asp-validation-for="PersonaId" class="text-danger"></span>
+    <select asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona"> </select>
+    <br /><br />
+
+    <div id="form_creation" class="btn-group">
+        <button type="submit" class="btn btn-success"> Guardar Cambios </button>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Empleados", "")</span>
+    </div>
+</form>

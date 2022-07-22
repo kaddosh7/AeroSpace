@@ -1,0 +1,43 @@
+﻿@model List<Propietario>
+@{ ViewBag.Title = "Relacion de Propietarios"; }
+
+    <div class="row">
+        <div class="col-md-9">
+            <h2> @ViewBag.Title </h2>
+        </div>
+        <div class="col-md-3 mt-1">
+            <a style="float: right;" class="btn btn-success" href="Propietario/Create"> Agregar Propietario </a>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-sm table-striped table-condensed table-hover table-light">
+        <thead>
+            <tr>
+                <th> Id Propietario </th>
+                <th> RIF </th>
+                <th> Propietario </th>
+                <th class="text-end"> Acci&oacute;n </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+                   <td id="id_link"> @Html.ActionLink(item.IdPropietario + "", "Details", new { id = item.IdPropietario } ) </td>
+                   <td> @item.Rif </td>
+                   <td>
+                        @if (item.Persona is not null)
+                            @if (item.Persona.Propietarios is not null)
+                                @item.Persona.NombrePersona
+                   </td>
+                   <td id="btn_link">
+                        <div style="float: right;" class="btn-group">
+                            <span class="btn btn-sm btn-success"> @Html.ActionLink("Editar", "Edit", new { id = item.IdPropietario }) </span>
+                            <span class="btn btn-sm btn-info"> @Html.ActionLink("Detalles", "Details", new { id = item.IdPropietario }) </span>
+                            <span class="btn btn-sm btn-danger"> @Html.ActionLink("Eliminar", "Delete", new { id = item.IdPropietario }, new { onclick="return confirm('Seguro? Se eliminara el registro');"}) </span>
+                        </div>
+                    </td>
+                </tr> 
+            }
+        </tbody>
+    </table>

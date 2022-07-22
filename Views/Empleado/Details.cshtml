@@ -1,0 +1,50 @@
+﻿@using AeroSpace.Models
+@model Empleado
+
+@{ ViewBag.Title = "Detalles de Empleado"; }
+
+<h2> @ViewBag.Title </h2>
+<hr /> <br />
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.IdEmpleado): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.IdEmpleado) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.PersonaId): </div>
+    <div class="col-md-9">
+        <select style="border: none; background: none; padding: 0;" asp-for="PersonaId" class="form-control" asp-items="ViewBag.IdPersona" disabled>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.RolEmpleado): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.RolEmpleado) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.Salario): </div>
+    <div class="col-md-9"> @Html.DisplayFor(model => model.Salario) </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"> @Html.DisplayNameFor(model => model.EstadoEmpleado): </div>
+    <div class="col-md-9">
+        @if (Model.EstadoEmpleado == 1)
+        {
+            <span class="text-success fw-bolder"> Empleado Activo </span>
+        } else
+        {
+            <span class="text-danger fw-bolder"> Empleado Inactivo </span>
+        }
+    </div>
+</div>
+<br /> <hr /> <br />
+<div id="form_creation">
+    <div id="form_creation" class="btn-group">
+        <span class="btn btn-warning"> @Html.ActionLink("Editar Registro", "Edit", new { id = Model.IdEmpleado })</span>
+        <span class="btn btn-info"> @Html.ActionLink("Relación de Empleados", "Index")</span>
+    </div>
+</div>
