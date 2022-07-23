@@ -7,10 +7,10 @@ Un sistema donde se registran las operaciones basicas de una aerolinea.
 - Agenda de vuelos, etc
 
 Vista de Acceso
-![Image](/imgs/login.png)
+![Image](imgs/login.png)
 
 Vista de Bienvenida
-![Image](/imgs/welcomeview.jpg)
+![Image](/imgswelcomeview.jpg)
 
 ### Support or Contact
 
