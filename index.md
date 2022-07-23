@@ -10,7 +10,7 @@ Vista de Acceso
 ![Image](imgs/login.png)
 
 Vista de Bienvenida
-![Image](/imgswelcomeview.jpg)
+![Image](/imgswelcomeview.png)
 
 ### Support or Contact
 
