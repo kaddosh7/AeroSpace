@@ -1,6 +1,6 @@
 <link rel="shortcut icon" type="image/png" href="imgs/aero-space-icono.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<h1 id="main_title">  HES App n Web Developer </h1>
+<h1 id="main_title">  HES AppWeb Developer </h1>
 ## AeroSpace
 
 Un sistema donde se registran las operaciones basicas de una aerolinea.
