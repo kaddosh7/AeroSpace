@@ -1,4 +1,8 @@
 #main_title {
   font-weight: bolder;
-  text-decoration: underline;
+  border-bottom: 1px solid darkblue;
+}
+
+img {
+  border-radius: 4px;
 }
