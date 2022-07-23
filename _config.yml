@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
+favicon: ![Image](imgs/favicon.png)
+icon: ![Image](imgs/favicon.png)
 title: HES Developer
 description: AeroSpace esta desarrollada con C#, SQL y JavaScript, con Boostrap en el CSS
