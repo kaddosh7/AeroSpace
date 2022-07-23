@@ -25,7 +25,3 @@ CRUD completo en cada vista del personal involucrado en el sistema donde se pued
 El formulario de registro de estadia contiene campos calculados lo que brinda una mejor experiencia del usuario (UX)
 
 ![Image](imgs/registroestadiasaviones.PNG)
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
