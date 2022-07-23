@@ -1,3 +1,6 @@
+<head>
+  <link rel="shortcut icon" type="image/png" href="imgs/aero-space-icono.png">
+</head>
 # HES App n Web Developer
 ## AeroSpace
 
