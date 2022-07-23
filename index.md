@@ -1,6 +1,6 @@
 ## HES App n Web Developer
 
-![Image](/imgs/aero-space.jpg)
+![Image](imgs/aero-space.jpg)
 
 ### Support or Contact
 
