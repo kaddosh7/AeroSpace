@@ -1,15 +1,16 @@
 ## HES App n Web Developer
-###AeroSpace
+### AeroSpace
+
 Un sistema donde se registran las operaciones basicas de una aerolinea.
 - Registro de personal
 - Registro de pasajeros
 - Agenda de vuelos, etc
 
 Vista de Acceso
-![Image](imgs/login.jpg)
+![Image](/imgs/login.jpg)
 
 Vista de Bienvenida
-![Image](imgs/welcomeview.jpg)
+![Image](/imgs/welcomeview.jpg)
 
 ### Support or Contact
 
