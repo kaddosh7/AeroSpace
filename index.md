@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/png" href="{{ "imgs/aero-space-icono.png" }}">
+<link rel="shortcut icon" type="image/png" src="{{ "imgs/aero-space-icono.png" }}">
 <link href="StyleSheet/MainStyle.css" rel="stylesheet" />
 <h1 id="main_title">  HES AppWeb Developer </h1>
 ## AeroSpace
